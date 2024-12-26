@@ -20,6 +20,7 @@ gcloud projects add-iam-policy-binding $PROJECT --member="serviceAccount:$PROJEC
 gcloud projects add-iam-policy-binding $PROJECT --member="serviceAccount:$PROJECTNUMBER-compute@developer.gserviceaccount.com" --role='roles/documentai.apiUser'
 gcloud projects add-iam-policy-binding $PROJECT --member="serviceAccount:$PROJECTNUMBER-compute@developer.gserviceaccount.com" --role='roles/storage.objectViewer'
 gcloud projects add-iam-policy-binding $PROJECT --member="serviceAccount:$PROJECTNUMBER-compute@developer.gserviceaccount.com" --role='roles/logging.logWriter'
+gcloud projects add-iam-policy-binding $PROJECT --member="serviceAccount:$PROJECTNUMBER-compute@developer.gserviceaccount.com" --role='roles/artifactregistry.writer'
 echo "Add user $PROJECTNUMBER-compute@developer.gserviceaccount.com to your AppSheet Google Drive folder with Read permissions."
 
 # Submit build

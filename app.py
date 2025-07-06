@@ -62,7 +62,7 @@ class datahandler:
         if "file" in data:
             documentPath = data["file"]
 
-        logging.error("Calling DocAI with file path: " + documentPath)
+        logging.error("[M] Calling DocAI with file path: " + documentPath)
 
         result = callDocAI(documentPath)
         data["text"] = result["text"]
@@ -71,6 +71,8 @@ class datahandler:
         data["totalFields"] = result["totalFields"]
         data["filledFields"] = result["filledFields"]
         data["entities"] = result["entities"]
+
+        logging.error("[M] data[text]: " + result["text"])
 
         self.db.collection(topic).document(data["id"]).set(data)
 
